@@ -1,0 +1,50 @@
+<!--pages/search/search.wxml-->
+<view class="searchContainer">
+    <!-- 头部 -->
+    <view class="header">
+      <view class="searchInput">
+        <text class="iconfont icon-search1 searchIcon"></text>
+        <input type="text" value="{{searchContent}}" placeholder="{{placeholderContent}}" placeholder-class="placeholder" bindinput="handleInputChange" />
+        <text class="iconfont icon-qingkong clear" hidden="{{!searchContent}}" bindtap="handleClear"></text>
+      </view>
+      <!-- <text class="cancle">取消</text> -->
+    </view>
+
+    <block wx:if="{{searchList.length}}">
+      <!-- 搜索内容展示 -->
+      <view class="showSearchContent">
+        <view class="searchContent">搜索内容：{{searchContent}}</view>
+        <view class="searchList">
+          <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+            <text class="iconfont icon-sousuo"></text>
+            <text bindtap="toSongDetail" id="{{item.id}}" class="content">{{item.name}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+      
+    <block wx:else>
+      <!-- 历史搜索记录 -->
+      <view wx:if="{{historyList.length}}" class="history">
+        <view title>历史</view>
+        <view class="historyItem" wx:for="{{historyList}}" wx:key="item" bindtap="searchHistory" data-historyword="{{item}}">
+          {{item}}
+        </view>
+        <!-- 删除 -->
+        <view class="iconfont icon-shanchu delete" bindtap="handleDelete"></view>
+      </view>
+
+      <!-- 热搜榜 -->
+      <view class="hotContainer">
+        <view class="title">热搜榜</view>
+        <!-- 列表 -->
+        <view class="hotList" >
+          <view class="hotItem" wx:for="{{hotList}}" wx:key="searchWord">
+            <text class="order">{{index + 1}}</text>
+            <text bindtap="searchHotSong" data-hotwords="{{item.searchWord}}" >{{item.searchWord}}</text>
+            <image wx:if="{{item.iconUrl}}" class="iconImg" src="{{item.iconUrl}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+</view>

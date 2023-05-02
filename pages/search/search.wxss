@@ -1,0 +1,111 @@
+/* pages/search/search.wxss */
+.searchContainer {
+    padding: 0 20rpx;
+  }
+  /* 头部 */
+  .header {
+    display: flex;
+    height: 60rpx;
+    line-height: 60rpx;
+    padding: 10rpx 0;
+  }
+  .searchInput {
+    position: relative;
+    flex: 1;
+    background: rgb(237,237,237,0.3);
+    border-radius: 30rpx;
+  }
+  .clear {
+    position: absolute;
+    right: 10rpx;
+    top: 0;
+    font-size: 30rpx;
+    z-index: 10;
+  }
+  .searchInput input {
+    margin-left: 55rpx;
+    height: 60rpx;
+  }
+  .placeholder {
+    font-size: 28rpx;
+  }
+  .cancle {
+    width: 80rpx;
+    text-align: center;
+  }
+  .searchIcon {
+    position: absolute;
+    left: 15rpx;
+    font-size: 40rpx;
+  }
+  /* 热搜榜 */
+  .hotContainer .title {
+    font-size: 30rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #eee;
+  }
+  .hotList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hotItem {
+    width: 50%;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 26rpx;
+  }
+  .hotItem .order {
+    margin: 0 10rpx;
+  }
+  .hotItem .iconImg {
+    width: 35rpx;
+    height: 20rpx;
+    margin-left: 10rpx;
+  }
+  /* 搜索结果区域 */
+  .searchContent {
+    color: rgb(147, 166, 229);
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    border-bottom: 1rpx solid #d43c33;
+  }
+  .searchItem {
+    height: 80rpx;
+    line-height: 80rpx;
+    display: flex;
+  }
+  .searchItem .content {
+    flex: 1;
+    margin-left: 20rpx;
+    border-bottom: 1rpx solid #eee;
+  }
+  /* 历史记录 */
+  .history {
+    position: relative;
+    display: flex;
+    flex-flow: wrap;
+    margin: 20rpx 0;
+  }
+  .history .title {
+    font-size: 28rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+  }
+  .history .historyItem {
+    font-size: 26rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    background: #ededed;
+    margin-left: 20rpx;
+    padding: 0 30rpx;
+    border-radius: 20rpx;
+    margin-bottom: 20rpx;
+  }
+  .history .delete {
+    position: absolute;
+    bottom: 30rpx;
+    right: 15rpx;
+    font-size: 36rpx;
+  }
